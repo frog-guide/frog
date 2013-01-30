@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-function UserLoginCtrl($scope, $http) {
+function UserLoginCtrl($scope) {
   $(document).ready(function(){
     $("#cad-frog").on("click", function(){
       if ( $("#form-cadastro").is(':visible') ) {
@@ -27,9 +27,13 @@ function UserLoginCtrl($scope, $http) {
   //   });
 }
 
-function DocumentCtrl($scope) {
+function DocumentCtrl($scope, $http) {
+    $http.get('/api/elements').
+        success(function(data, status, headers, config) {
+            $scope.elements = data.elements;
+        });
     $(document).ready(function() {
-        var editor = CodeMirror.fromTextArea(document.getElementById("code"), {});
+        // var editor = CodeMirror.fromTextArea(document.getElementById("code"), {});
     });
 }
 

@@ -39,7 +39,7 @@ app.get('/partials/:name', routes.partials);
 
 // JSON API
 
-app.get('/api/posts', api.posts);
+app.get('/api/elements', api.elements);
 
 app.get('/api/post/:id', api.post);
 app.post('/api/post', api.addPost);

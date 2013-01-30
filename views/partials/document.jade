@@ -6,16 +6,15 @@ section.content
           a.elements-lnk.btn.btn-new(href='#text-normal', title='Criar novo Elemento')
             span.ic.ic-add
             | Criar novo Elemento
-        li.elements-item.current
-          a.elements-lnk(href='#text-normal', title='Texto normal') Texto normal
-        li.elements-item
-          a.elements-lnk(href='#link-normal', title='Link normal') Link normal
-        li.elements-item
-          a.elements-lnk(href='#botao-primario', title='Botão primário') Botão primário
-        li.elements-item
-          a.elements-lnk(href='#botao-secundario', title='Botão secundário') Botão secundário
+        li.elements-item(ng-repeat="element in elements")
+          a.elements-lnk {{ element.name }}
   // Editor
   section#text-normal.editor
+    tabs
+      pane(title='Localization')
+        abc
+      pane(title='Pluralization')
+        def
     h2
       | Editor:
       span Texto normal

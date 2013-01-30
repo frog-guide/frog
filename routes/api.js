@@ -4,18 +4,74 @@
 
 // For a real app, you'd make database requests here.
 // For this example, "data" acts like an in-memory "database"
-// var data = {
-//   "users": [
-//     {
-//       "username": "cironunes",
-//       "password": "123123"
-//     },
-//     {
-//       "username": "giovanni",
-//       "password": "1231234"
-//     }
-//   ]
-// };
+
+var data = {
+  "users": [
+    {
+      "username": "cironunes",
+      "password": "123123"
+    },
+    {
+      "username": "giovanni",
+      "password": "1231234"
+    }
+  ],
+
+  "elements": [
+    {
+        "name": "Texto normal",
+        "color": "c60f13",
+        "backround": "cc9977",
+        "size": "12px",
+        "line-height": "2px",
+        "decoration": "none",
+        "style": "normal"
+    },
+    {
+        "name": "Link normal",
+        "color": "c60f13",
+        "backround": "cc9977",
+        "size": "12px",
+        "line-height": "2px",
+        "decoration": "none",
+        "style": "normal"
+    },
+    {
+        "name": "Botão primário",
+        "color": "c60f13",
+        "backround": "cc9977",
+        "size": "12px",
+        "line-height": "2px",
+        "decoration": "none",
+        "style": "normal"
+    },
+    {
+        "name": "Botão secundário",
+        "color": "c60f13",
+        "backround": "cc9977",
+        "size": "12px",
+        "line-height": "2px",
+        "decoration": "none",
+        "style": "normal"
+    }
+  ]
+};
+
+// GET
+
+exports.elements = function (req, res) {
+    var elements = [];
+    data.elements.forEach(function(element, i) {
+        elements.push({
+            id: i,
+            name: element.name
+        })
+    });
+
+    res.json({
+        elements: elements
+    });
+};
 
 // // GET
 
