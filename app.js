@@ -33,7 +33,8 @@ app.configure('production', function(){
 
 // Routes
 
-app.get('/', routes.index);
+app.get('/', routes.login);
+app.get('/document', routes.document);
 app.get('/partials/:name', routes.partials);
 
 // JSON API

@@ -5,31 +5,15 @@ angular.module('frog', ['frog.filters', 'frog.services', 'frog.directives']).
   config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.
       when('/', {
-        templateUrl: 'partials/index',
-        controller: IndexCtrl
+        templateUrl: 'partials/userLogin',
+        controller: UserLoginCtrl
+      }).
+      when('/document', {
+        templateUrl: 'partials/document',
+        controller: DocumentCtrl
       }).
       otherwise({
         redirectTo: '/'
       });
     $locationProvider.html5Mode(true);
   }]);
-
-  $(document).ready(function(){
-    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {});
-
-    $("#cad-frog").on("click", function(){
-      if ( $("#form-cadastro").is(':visible') ) {
-        $("#form-cadastro").hide();
-      }
-      else {
-      $("#form-cadastro").show();
-      }
-      return false;
-    });
-
-    $("#show-cadastro").on("click", function(){
-      $("#login").hide();
-      $("#form-cadastro").hide();
-      $("#cadastro").show();
-    })
-  });
