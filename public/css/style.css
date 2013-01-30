@@ -49,6 +49,12 @@ body {height:100%;}
 	border-left:1px solid #e7e7e7;
 }
 
+.login {
+	width: 350px;
+	margin: 15% auto;
+}
+
+
 /* =============================================================================
    GLOBAL
    ========================================================================== */
@@ -80,7 +86,7 @@ h2 span {font-weight: lighter;}
 	color:#333;
 	background-color: #ededed;
 }
-.elements .btn-new {
+.elements .btn-new, .btn-login {
 	margin:5px 0 15px;
 	padding: 10px 12px;
 	display: block;
@@ -91,13 +97,25 @@ h2 span {font-weight: lighter;}
 	text-shadow: 0 1px 0 rgba(0,0,0,.4);
 	box-shadow: inset 0 1px 0 0 rgba(255,255,255,.6), inset 0 1px 0 0 rgba(0,0,0,.4), 0 1px 1px 0 rgba(0,0,0,.2);
 }
-.elements .btn-new:hover, .elements .btn-new:focus {
+.elements .btn-new:hover, .elements .btn-new:focus, .btn-login:hover {
 	color:#fff;
 	background-color: #38d360;
 }
+
 .editor .btn-save {
 	clear:both;
 	margin: 20px 0;
+}
+
+.btn-facebook {
+	background-color: #3B5998;
+	border-color: #1F4189;
+	color: #FFF;
+}
+
+.btn-facebook:hover {
+	background-color: #3B5998;
+	color: #FFF;
 }
 
 /* =============================================================================
@@ -179,7 +197,8 @@ h2 span {font-weight: lighter;}
 	margin-left:-3px;
 	border-radius: 0 4px 4px 0;
 }
-.editor textarea, .editor input[type="text"], .editor select {
+.editor textarea, .editor input[type="text"], .editor select,
+.login textarea, .login input[type="text"], .login input[type="password"], .login select {
 	outline: none;
 	display:inline-block;
 	background-color: white;
@@ -195,7 +214,8 @@ h2 span {font-weight: lighter;}
 .editor select {
 	width: 270px;
 }
-.editor textarea:focus, .editor input[type="text"]:focus, .editor select:focus {color:#777;}
+.editor textarea:focus, .editor input[type="text"]:focus, .editor select:focus,
+.login input[type="text"]:focus, .login input[type="password"]:focus {color:#777;}
 
 /* =============================================================================
    VIEW
@@ -367,6 +387,42 @@ span.CodeMirror-selected {
 	color:#ff9e59;
 }
 
+/* =============================================================================
+   Login
+   ========================================================================== */
+.login input[type=text], .login input[type=password] {
+	width: 96%;
+	font-size: 15px;
+	margin-bottom: 15px;
+	padding-right: 0;
+}
+
+.login button {
+	float: right;
+	margin: 0;
+}
+
+.login h2 {
+	text-align: center;
+}
+
+#cad-frog, #cad-facebook {
+	padding: 10px 0;
+	margin: 30px 5px 30px 0;
+	max-width: 160px;
+	text-align: center;
+	font-size: 19px;
+	line-height: 22px;
+}
+
+#cadastro {
+	display: none;
+}
+
+.login a {
+	font-size: 14px;
+	color: #333;
+}
 
 
 /* =============================================================================

@@ -13,3 +13,21 @@ angular.module('frog', ['frog.filters', 'frog.services', 'frog.directives']).
       });
     $locationProvider.html5Mode(true);
   }]);
+
+  $(document).ready(function(){
+    $("#cad-frog").on("click", function(){
+      if ( $("#form-cadastro").is(':visible') ) {
+        $("#form-cadastro").hide();
+      }
+      else {
+      $("#form-cadastro").show();
+      }
+      return false;
+    });
+
+    $("#show-cadastro").on("click", function(){
+      $("#login").hide();
+      $("#form-cadastro").hide();
+      $("#cadastro").show();
+    })
+  });
