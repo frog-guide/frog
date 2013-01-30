@@ -305,8 +305,8 @@ h2 span {font-weight: lighter;}
 }
 .CodeMirror textarea {
 	font-family:inherit !important;
-	font-size: 1.4em;
-	line-height:1.2em;
+	font-size: 1.4em !important;
+	line-height:1.2em !important;
 }
 .CodeMirror-cursor {
 	z-index:10;
@@ -317,9 +317,12 @@ h2 span {font-weight: lighter;}
 .CodeMirror-focused .CodeMirror-cursor {
 	visibility:visible;
 }
+.CodeMirror {
+	font-size: 1.4em !important;
+}
 span.CodeMirror-selected {
 	background:#ccc !important;
-	color:HighlightText !important;
+	color: HighlightText !important;
 }
 .CodeMirror-focused span.CodeMirror-selected {
 	background:Highlight !important;

@@ -15,6 +15,8 @@ angular.module('frog', ['frog.filters', 'frog.services', 'frog.directives']).
   }]);
 
   $(document).ready(function(){
+    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {});
+
     $("#cad-frog").on("click", function(){
       if ( $("#form-cadastro").is(':visible') ) {
         $("#form-cadastro").hide();

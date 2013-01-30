@@ -6,6 +6,8 @@ html(ng-app="frog")
     title Nome da Aplicação no Frog
     link(rel='stylesheet', href='/css/reset.css')
     link(rel='stylesheet', href='/css/style.css')
+    link(rel="stylesheet", href="/js/codemirror/codemirror.css")
+
     block body
       header.header
         h1.logo
@@ -75,14 +77,16 @@ html(ng-app="frog")
             form
               textarea#code(name='code')
                 | .app {
-                | color: #c60f13;
-                | background-color: #cc9977;
-                | font-size: 12px;
-                | line-height: 2px;
-                | border-radius: 5px;
-                | text-decoration: undeline;
-                | font-style: italic;
+                |   color: #c60f13;
+                |   background-color: #cc9977;
+                |   font-size: 12px;
+                |   line-height: 2px;
+                |   border-radius: 5px;
+                |   text-decoration: undeline;
+                |   font-style: italic;
                 | }
+
+
     script(src='/js/lib/angular/angular.js')
     script(src='/js/lib/jquery/jquery-1.8.3.min.js')
     script(src='/js/app.js')
@@ -90,3 +94,5 @@ html(ng-app="frog")
     script(src='/js/controllers.js')
     script(src='/js/filters.js')
     script(src='/js/directives.js')
+    script(src="/js/codemirror/codemirror.js")
+    script(src="/js/codemirror/css.js")
