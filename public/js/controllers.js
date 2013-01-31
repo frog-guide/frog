@@ -32,8 +32,28 @@ function DocumentCtrl($scope, $http) {
         success(function(data, status, headers, config) {
             $scope.elements = data.elements;
         });
+
+      var Utils = {
+        tabs: function() {
+          $(".editor").not(":first").hide();
+
+          $(".elements-list").on("click", ".click-tabs a", function(){
+            $(".editor").hide();
+            $(".click-tabs a").parent().removeClass("current");
+
+            var content = $(this).attr("rel");
+            $(this).parent().addClass("current");
+            $(content).show();
+
+            return false;
+          });
+        }
+      };
+
     $(document).ready(function() {
         // var editor = CodeMirror.fromTextArea(document.getElementById("code"), {});
+        $(".click-tabs:first").addClass("current");
+        Utils.tabs();
     });
 }
 

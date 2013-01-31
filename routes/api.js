@@ -20,37 +20,46 @@ var data = {
   "elements": [
     {
         "name": "Texto normal",
-        "color": "c60f13",
-        "backround": "cc9977",
+        "color": "c60f54",
+        "background": "cc3277",
         "size": "12px",
-        "line-height": "2px",
+        "lineHeight": "2px",
         "decoration": "none",
         "style": "normal"
     },
     {
         "name": "Link normal",
         "color": "c60f13",
-        "backround": "cc9977",
+        "background": "gg9977",
         "size": "12px",
-        "line-height": "2px",
+        "lineHeight": "2px",
         "decoration": "none",
         "style": "normal"
     },
     {
         "name": "Botão primário",
-        "color": "c60f13",
-        "backround": "cc9977",
+        "color": "c60f48",
+        "background": "cc9347",
         "size": "12px",
-        "line-height": "2px",
+        "lineHeight": "2px",
         "decoration": "none",
         "style": "normal"
     },
     {
         "name": "Botão secundário",
-        "color": "c60f13",
-        "backround": "cc9977",
+        "color": "c60f18",
+        "background": "cc1257",
         "size": "12px",
-        "line-height": "2px",
+        "lineHeight": "2px",
+        "decoration": "none",
+        "style": "normal"
+    },
+    {
+        "name": "teste",
+        "color": "cc5547",
+        "background": "cc1257",
+        "size": "25px",
+        "lineHeight": "2px",
         "decoration": "none",
         "style": "normal"
     }
@@ -64,7 +73,13 @@ exports.elements = function (req, res) {
     data.elements.forEach(function(element, i) {
         elements.push({
             id: i,
-            name: element.name
+            name: element.name,
+            color: element.color,
+            background: element.background,
+            size: element.size,
+            lineHeight: element.lineHeight,
+            decoration: element.decoration,
+            style: element.style
         })
     });
 

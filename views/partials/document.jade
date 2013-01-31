@@ -3,55 +3,60 @@ section.content
     nav.elements-nav
       ul.elements-list
         li.elements-item
-          a.elements-lnk.btn.btn-new(href='#text-normal', title='Criar novo Elemento')
+          a.elements-lnk.btn.btn-new(href='', title='Criar novo Elemento')
             span.ic.ic-add
             | Criar novo Elemento
-        li.elements-item(ng-repeat="element in elements")
-          a.elements-lnk {{ element.name }}
+        li.elements-item.click-tabs(ng-repeat="element in elements")
+          a.elements-lnk(rel="#editor-{{ element.id }}") {{ element.name }}
   // Editor
-  section#text-normal.editor
-    tabs
-      pane(title='Localization')
-        abc
-      pane(title='Pluralization')
-        def
-    h2
-      | Editor:
-      span Texto normal
-    .columns
-      label(for='') Cor do texto
-      input.val-cores(type='text', value='c60f13', placeholder='Hex: cc8899', name='color', maxlength='7')
-      span.prefix(style='background: #c60f13;') #
-    .columns
-      label(for='') Cor de fundo do texto
-      input.val-cores(type='text', value='cc9977', placeholder='Hex:cc8899', name='background-color', maxlength='6')
-      span.prefix(style='background: #cc9977;') #
-    .columns
-      label(for='') Tamanho do texto
-      input.val-cores(type='text', value='12px', placeholder='12', name='font-size')
-      span.sufix px
-    .columns
-      label(for='') Altura da linha do texto
-      input.val-cores(type='text', value='2px', placeholder='2', name='line-height')
-      span.sufix px
-    .columns
-      label(for='') Decoração do texto
-      select(placeholder='none', name='text-decoration')
-        option(value='none') None
-        option(value='underline') Underline
-        option(value='overline') Overline
-        option(value='line-through') Line-through
-        option(value='blink') Blink
-        option(value='Inherit') Inherit
-    .columns
-      label(for='') Estilo do texto
-      select(placeholder='normal', name='font-style')
-        option(value='normal') Normal
-        option(value='italic') Italic
-        option(value='oblique') Oblique
-        option(value='Inherit') Inherit
-    .row
-      button#gerar-coding.btn.btn-save Salvar
+
+  section.editor(ng-repeat="element in elements", id='editor-{{ element.id }}')
+    div.testee
+      h2 Editor:
+        span {{ element.name }}
+
+      .columns
+        label(for='') Cor do texto
+        input.val-cores(type='text', value='', placeholder='Hex: {{ element.color }}', name='color', maxlength='7')
+        span.prefix(style='background: #c60f13 ') #
+
+      .columns
+        label(for='') Cor de fundo do texto
+        input.val-cores(type='text', value='', placeholder='Hex: {{ element.background }}', name='background-color', maxlength='6')
+        span.prefix(style='background: #cc9977;') #
+
+      .columns
+        label(for='') Tamanho do texto
+        input.val-cores(type='text', value='', placeholder='{{ element.size }}', name='font-size')
+        span.sufix px
+
+      .columns
+        label(for='') Altura da linha do texto
+        input.val-cores(type='text', value='', placeholder=' {{ element.lineHeight }}', name='line-height')
+        span.sufix px
+
+      .columns
+        label(for='') Decoração do texto
+        select(placeholder='none', name='text-decoration')
+          option(value='none') None
+          option(value='underline') Underline
+          option(value='overline') Overline
+          option(value='line-through') Line-through
+          option(value='blink') Blink
+          option(value='Inherit') Inherit
+
+      .columns
+        label(for='') Estilo do texto
+        select(placeholder='normal', name='font-style')
+          option(value='normal') Normal
+          option(value='italic') Italic
+          option(value='oblique') Oblique
+          option(value='Inherit') Inherit
+
+      .row
+        button#gerar-coding.btn.btn-save Salvar
+
+
   // end Editor
   section.view
     h2 Ver Demo
