@@ -30,23 +30,21 @@ function UserLoginCtrl($scope) {
 }
 
 function DocumentCtrl($scope, $http) {
-    var Utils = {
-        tabs: function() {
-          $(".editor").not(":first").hide();
+  var Utils = {
+      tabs: function() {
+        $(".elements-list").on("click", ".click-tabs a", function(){
+          $(".editor").hide();
+          $(".click-tabs a").parent().removeClass("current");
 
-          $(".elements-list").on("click", ".click-tabs a", function(){
-            $(".editor").hide();
-            $(".click-tabs a").parent().removeClass("current");
+          var content = $(this).attr("rel");
+          $(this).parent().addClass("current");
+          $(content).show();
 
-            var content = $(this).attr("rel");
-            $(this).parent().addClass("current");
-            $(content).show();
-
-            return false;
-          });
-        }
-      };
-
+          return false;
+        });
+      }
+    };
+    Utils.tabs();
 
     //Abre box para novo item
     $("#btn-new").on("click", function(){
@@ -56,16 +54,8 @@ function DocumentCtrl($scope, $http) {
 
     //Fecha box novo item
     $("#mask").on("click", function(){
-      $("#mask").removeClass("mask").hide();
+      $(this).removeClass("mask").hide();
       $(".box-add-item").hide();
-    })
-
-    $(document).ready(function() {
-        // var editor = CodeMirror.fromTextArea(document.getElementById("code"), {});
-        $(".click-tabs:first").addClass("current");
-        $(".editor").not(":first").hide();
-
-        Utils.tabs();
     });
 
     $http.get('/api/elements').
