@@ -50,6 +50,6 @@ app.get('*', routes.index);
 
 // Start server
 
-app.listen(5500, function(){
+app.listen(3000, function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
 });
