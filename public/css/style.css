@@ -123,6 +123,12 @@ h2 span {font-weight: lighter;}
 	color: #FFF;
 }
 
+.header .btn-login {
+	width: 100px;
+	float: right;
+	margin: 20px 0;
+}
+
 /* =============================================================================
    HEADER
    ========================================================================== */
@@ -131,7 +137,7 @@ h2 span {font-weight: lighter;}
 	font-size:24px;
 	font-weight: lighter;
 	letter-spacing:-0.04em;
-	margin-top: 10px;
+	margin: 20px 0;
 	width: 200px;
 	float: left;
 }

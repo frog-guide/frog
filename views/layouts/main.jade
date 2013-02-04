@@ -1,0 +1,10 @@
+!!!
+html(ng-app="frog")
+  head
+    include partials/head
+  body
+    include partials/header
+    block body
+        div(ng-view)
+
+        include partials/baseScripts
