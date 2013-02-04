@@ -38,6 +38,7 @@ body {height:100%;}
 	padding: 25px 30px 20px;
 	position:relative;
 }
+
 .view {
 	position: absolute;
 	right:0;
@@ -52,6 +53,10 @@ body {height:100%;}
 .login {
 	width: 350px;
 	margin: 15% auto;
+}
+
+.fright {
+	float: right;
 }
 
 
@@ -126,6 +131,9 @@ h2 span {font-weight: lighter;}
 	font-size:24px;
 	font-weight: lighter;
 	letter-spacing:-0.04em;
+	margin-top: 10px;
+	width: 200px;
+	float: left;
 }
 .logo span {
 	position:relative;
@@ -155,6 +163,7 @@ h2 span {font-weight: lighter;}
 	color:#fff;
 	font-weight: bolder;
 }
+
 .current .btn-new {
 	color:#fff;
 	font-weight: normal;

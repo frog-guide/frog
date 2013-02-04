@@ -4,11 +4,11 @@
 angular.module('frog', ['frog.filters', 'frog.services', 'frog.directives']).
   config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.
-      when('/', {
+      when('/login', {
         templateUrl: 'partials/userLogin',
         controller: UserLoginCtrl
       }).
-      when('/document', {
+      when('/', {
         templateUrl: 'partials/document',
         controller: DocumentCtrl
       }).

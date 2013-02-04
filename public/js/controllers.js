@@ -18,6 +18,8 @@ function UserLoginCtrl($scope) {
       $("#login").hide();
       $("#form-cadastro").hide();
       $("#cadastro").show();
+
+      return false;
     })
   });
 
@@ -28,12 +30,7 @@ function UserLoginCtrl($scope) {
 }
 
 function DocumentCtrl($scope, $http) {
-    $http.get('/api/elements').
-        success(function(data, status, headers, config) {
-            $scope.elements = data.elements;
-        });
-
-      var Utils = {
+    var Utils = {
         tabs: function() {
           $(".editor").not(":first").hide();
 
@@ -53,8 +50,15 @@ function DocumentCtrl($scope, $http) {
     $(document).ready(function() {
         // var editor = CodeMirror.fromTextArea(document.getElementById("code"), {});
         $(".click-tabs:first").addClass("current");
+        $(".editor").not(":first").hide();
+
         Utils.tabs();
     });
+
+    $http.get('/api/elements').
+      success(function(data, status, headers, config) {
+          $scope.elements = data.elements;
+      });
 }
 
 // function AddPostCtrl($scope, $http, $location) {
