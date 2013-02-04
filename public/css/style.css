@@ -442,6 +442,48 @@ span.CodeMirror-selected {
 	color: #333;
 }
 
+/* =============================================================================
+   ADD ITEM
+   ========================================================================== */
+.mask {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #333;
+	opacity: 0.8;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	display: none;
+}
+
+.box-add-item {
+	position: absolute;
+	width: 350px;
+	height: 100px;
+	background: #FFF;
+	border: 1px solid #ccc;
+	top: 25%;
+	left: 35%;
+	z-index: 9999;
+	display: none;
+	padding: 15px;
+}
+
+	.box-add-item input {
+		padding: 10px;
+		border: 1px solid #ccc;
+		width: 94%;
+		height: 30px;
+		margin-bottom: 20px;
+		font-size: 20px;
+	}
+
+	.box-add-item .btn {
+		float: right;
+		margin-top: -8px;
+	}
+
 
 /* =============================================================================
    SPRITE

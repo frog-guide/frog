@@ -47,6 +47,19 @@ function DocumentCtrl($scope, $http) {
         }
       };
 
+
+    //Abre box para novo item
+    $("#btn-new").on("click", function(){
+      $("#mask").addClass("mask").show();
+      $(".box-add-item").show();
+    });
+
+    //Fecha box novo item
+    $("#mask").on("click", function(){
+      $("#mask").removeClass("mask").hide();
+      $(".box-add-item").hide();
+    })
+
     $(document).ready(function() {
         // var editor = CodeMirror.fromTextArea(document.getElementById("code"), {});
         $(".click-tabs:first").addClass("current");

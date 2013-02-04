@@ -8,6 +8,13 @@ html(ng-app="frog")
     block body
         div(ng-view)
 
+        div#mask
+        div.box-add-item
+            input(type='text', placeholder="Link Header")
+            a.btn.btn-new(href='', title='Criar Elemento')
+                span.ic.ic-add
+                | Criar Elemento
+
         include partials/baseScripts
         script(src="/js/codemirror/codemirror.js")
         script(src="/js/codemirror/css.js")
