@@ -30,22 +30,6 @@ function UserLoginCtrl($scope) {
 }
 
 function DocumentCtrl($scope, $http) {
-  var Utils = {
-    tabs: function() {
-      $(".elements-list").on("click", ".click-tabs a", function(){
-        $(".editor").hide();
-        $(".click-tabs a").parent().removeClass("current");
-
-        var content = $(this).attr("rel");
-        $(this).parent().addClass("current");
-        $(content).show();
-
-        return false;
-      });
-    }
-  };
-  Utils.tabs();
-
   //Abre box para novo item
   $("#btn-new").on("click", function(){
     $("#mask").addClass("mask").show();

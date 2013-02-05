@@ -1,18 +1,7 @@
-section.content
-  section.elements
-    nav.elements-nav
-      ul.elements-list
-        li.elements-item
-          a.elements-lnk.btn.btn-new(href='', id='btn-new', title='Criar novo Elemento')
-            span.ic.ic-add
-            | Criar novo Elemento
-        li.elements-item.click-tabs(ng-repeat="element in elements | orderBy:'id':true")
-          a.elements-lnk(rel="#editor-{{ element.id }}") {{ element.name }}
-  // Editor
-
-  section.editor(ng-repeat="element in elements", id='editor-{{ element.id }}')
-    div.testee
-      h2 Editor:
+tabs
+  pane(ng-repeat='element in elements | orderBy:"id":true', heading='{{element.name}}')
+    section.editor
+     h2 Editor:
         span {{ element.name }}
 
       .columns
@@ -56,22 +45,19 @@ section.content
       .row
         button#gerar-coding.btn.btn-save Salvar
 
-
-  // end Editor
-  section.view
-    h2 Ver Demo
-    .view-demo
-      span Seu texto
-    .view-css
-      h2 Ver CSS
-      form
-        textarea#code(name='code')
-          | .app {
-          |   color: #c60f13;
-          |   background-color: #cc9977;
-          |   font-size: 12px;
-          |   line-height: 2px;
-          |   border-radius: 5px;
-          |   text-decoration: undeline;
-          |   font-style: italic;
-          | }
+    section.view
+        h2 Ver Demo
+        .view-demo
+          span {{ element.name }}
+        .view-css
+          h2 Ver CSS
+          form
+            textarea#code(name='code')
+              | .app {
+              |   color: {{ '#' + element.color }};
+              |   background-color: {{ '#' + element.background }};
+              |   font-size: {{ element.size }};
+              |   line-height: {{ element.lineHeight }};
+              |   text-decoration: {{ element.decoration }};
+              |   font-style: {{ element.style }};
+              | }
