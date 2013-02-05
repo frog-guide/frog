@@ -30,38 +30,22 @@ function UserLoginCtrl($scope) {
 }
 
 function DocumentCtrl($scope, $http) {
-  var Utils = {
-      tabs: function() {
-        $(".elements-list").on("click", ".click-tabs a", function(){
-          $(".editor").hide();
-          $(".click-tabs a").parent().removeClass("current");
+  //Abre box para novo item
+  $("#btn-new").on("click", function(){
+    $("#mask").addClass("mask").show();
+    $(".box-add-item").show();
+  });
 
-          var content = $(this).attr("rel");
-          $(this).parent().addClass("current");
-          $(content).show();
+  //Fecha box novo item
+  $("#mask").on("click", function(){
+    $(this).removeClass("mask").hide();
+    $(".box-add-item").hide();
+  });
 
-          return false;
-        });
-      }
-    };
-    Utils.tabs();
-
-    //Abre box para novo item
-    $("#btn-new").on("click", function(){
-      $("#mask").addClass("mask").show();
-      $(".box-add-item").show();
+  $http.get('/api/elements').
+    success(function(data, status, headers, config) {
+        $scope.elements = data.elements;
     });
-
-    //Fecha box novo item
-    $("#mask").on("click", function(){
-      $(this).removeClass("mask").hide();
-      $(".box-add-item").hide();
-    });
-
-    $http.get('/api/elements').
-      success(function(data, status, headers, config) {
-          $scope.elements = data.elements;
-      });
 }
 
 // function AddPostCtrl($scope, $http, $location) {

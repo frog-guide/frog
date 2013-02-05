@@ -1,7 +1,7 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-angular.module('frog', ['frog.filters', 'frog.services', 'frog.directives']).
+angular.module('frog', ['frog.filters', 'frog.services', 'frog.directives', 'ui.bootstrap']).
   config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.
       when('/login', {
