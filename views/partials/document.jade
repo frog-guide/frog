@@ -6,7 +6,7 @@ section.content
           a.elements-lnk.btn.btn-new(href='', id='btn-new', title='Criar novo Elemento')
             span.ic.ic-add
             | Criar novo Elemento
-        li.elements-item.click-tabs(ng-repeat="element in elements")
+        li.elements-item.click-tabs(ng-repeat="element in elements | orderBy:'id':true")
           a.elements-lnk(rel="#editor-{{ element.id }}") {{ element.name }}
   // Editor
 

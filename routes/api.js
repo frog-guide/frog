@@ -62,6 +62,15 @@ var data = {
         "lineHeight": "2px",
         "decoration": "none",
         "style": "normal"
+    },
+    {
+        "name": "Mais um",
+        "color": "cc5547",
+        "background": "cc1257",
+        "size": "25px",
+        "lineHeight": "2px",
+        "decoration": "none",
+        "style": "normal"
     }
   ]
 };
