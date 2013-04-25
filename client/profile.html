@@ -1,0 +1,24 @@
+<template name="profile">
+	{{#each elements}}
+		<ul class="list-profile">
+			<li>
+				<p> <strong>Cor do texto:</strong>{{corTexto}} </p>
+			</li>
+			<li>
+				<p> <strong>Cor de fundo do texto:</strong> {{bgTexto}} </p>
+			</li>
+			<li>
+				<p> <strong>Tamanho do texto:</strong> {{sizeTexto}} </p>
+			</li>
+			<li>
+				<p> <strong>Altura da linha do texto:</strong> {{lineHeight}} </p>
+			</li>
+			<li>
+				<p> <strong>Decoração do texto:</strong> {{textDecoration}} </p>
+			</li>
+			<li>
+				<p> <strong>Estilo do texto:</strong> {{fontStyle}} </p>
+			</li>
+		</ul>
+	{{/each}}
+</template>

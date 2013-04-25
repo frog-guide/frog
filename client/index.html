@@ -1,0 +1,28 @@
+<head>
+	<meta charset="UTF-8">
+	<title>Frog - Front-end Guide</title>
+	<link rel="stylesheet" href="/css/reset.css" media="screen" />
+	<link rel="stylesheet" href="/css/style.css" media="screen" />
+</head>
+
+<body>
+	<header class="header">
+		<h1 class="logo"><img src="/img/frog-logo.png" alt="Frog - Front-end Guide" /></h1>
+	</header>
+
+  	{{> main}}
+
+	<footer class="footer"></footer>
+</body>
+
+<template name="main">
+	{{#if hasUrl }}
+		{{> editor}}
+	{{else}}
+		{{#if isProfile}}
+			{{> profile}}
+		{{else}}
+			{{> editor}}
+		{{/if}}
+	{{/if}}
+</template>
