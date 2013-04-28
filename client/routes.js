@@ -1,7 +1,8 @@
 var Routes = Backbone.Router.extend({
 	routes: {
 		"": "root",
-		"user\/:username": "profile"
+		"user\/:username": "profile",
+		"project\/:projecname": "project"
 	},
 	root: function() {
 		Session.set("url", undefined);
@@ -9,6 +10,10 @@ var Routes = Backbone.Router.extend({
 	profile: function(username){
 		Session.set("username", username);
 		Session.set("url", "profile");
+	},
+	project: function(projecname) {
+		Session.set("projecname", projecname);
+		Session.set("url", "project");
 	}
 });
 
