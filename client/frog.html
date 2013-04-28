@@ -1,6 +1,6 @@
 <template name="editor">
 	<section class="content">
-		<section class="elements">
+		<!-- <section class="elements">
 			<nav class="elements-nav">
 				<ul class="elements-list">
 					<li class="elements-item">
@@ -11,13 +11,27 @@
 					</li>
 				</ul>
 			</nav>
-		</section>
+		</section> -->
 
 		<!-- Editor -->
 		<section class="editor" id="text-normal">
-			<h2>Editor: <span>Texto normal</span></h2>
+			<!-- <h2>Editor: <span>Texto normal</span></h2> -->
 
-			<div class="columns">
+		<div class="columns">
+			<label for="">Projeto</label>
+			<select name="" id="project-name">
+				{{#each elements}}
+					<option value="{{project}}">{{project}}</option>
+				{{/each}}
+			</select>
+		</div>
+
+		<div class="columns">
+			<label for="">Elemento Estilizado</label>
+			<input type="text" id="element-name" placeholder="header" value="" class="val-cores">
+		</div>
+
+		<div class="columns">
 		        <label for="">Cor do texto</label>
 		        <input type="text" value="" placeholder="Hex: cc8899" id="color-text" maxlength="7" class="val-cores" />
 		        <span class="prefix"  style="background: #c60f13">#</span>

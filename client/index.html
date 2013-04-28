@@ -7,7 +7,12 @@
 
 <body>
 	<header class="header">
-		<h1 class="logo"><img src="/img/frog-logo.png" alt="Frog - Front-end Guide" /></h1>
+		<h1 class="logo">
+			<a href="/"><img src="/img/frog-logo.png" alt="Frog - Front-end Guide" /></a>
+		</h1>
+		<div class="nav-perfil">
+			<a href="/user/bernard">Meus Projetos</a>
+		</div>
 	</header>
 
   	{{> main}}
@@ -19,10 +24,14 @@
 	{{#if hasUrl }}
 		{{> editor}}
 	{{else}}
-		{{#if isProfile}}
-			{{> profile}}
+		{{#if isProject}}
+			{{> project}}
 		{{else}}
-			{{> editor}}
+			{{#if isProfile}}
+				{{> profile}}
+			{{else}}
+				{{> editor}}
+			{{/if}}
 		{{/if}}
 	{{/if}}
 </template>
